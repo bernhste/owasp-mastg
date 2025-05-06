@@ -262,7 +262,13 @@ def get_all_demos_beta():
             frontmatter = next(yaml.load_all(content, Loader=yaml.FullLoader))
 
             frontmatter['path'] = f"/MASTG/demos/{os.path.splitext(os.path.relpath(file, 'docs/MASTG/demos'))[0]}"
-            test_id = frontmatter['id']            
+
+            # TODO: The code would fail, because there are new MD files for each tool in the demo. This is just for the PoC.
+            try:
+                test_id = frontmatter['id']
+            except:
+                continue
+
             frontmatter['id'] = test_id 
             frontmatter['title'] = f"@{test_id}"
             frontmatter['platform'] = get_platform_icon(frontmatter['platform'])

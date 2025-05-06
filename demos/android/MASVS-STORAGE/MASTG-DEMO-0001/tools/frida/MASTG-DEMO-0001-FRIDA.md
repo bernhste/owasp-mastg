@@ -1,16 +1,6 @@
 ---
-platform: android
 title: External Storage APIs Tracing with Frida
-id: MASTG-DEMO-0002
-code: [kotlin]
-test: MASTG-TEST-0201
 ---
-
-### Sample
-
-The snippet below shows sample code that creates two files in external storage using the `getExternalFilesDir` method and the `MediaStore` API.
-
-{{ MastgTest.kt }}
 
 ### Steps
 

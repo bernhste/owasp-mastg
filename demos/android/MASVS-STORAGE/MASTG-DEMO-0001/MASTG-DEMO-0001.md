@@ -1,9 +1,10 @@
 ---
 platform: android
-title: File System Snapshots from External Storage
+title: Using MediaStore API to create external files
 id: MASTG-DEMO-0001
 code: [kotlin]
 test: MASTG-TEST-0200
+tools: [frida, adb]
 ---
 
 ### Sample
@@ -12,32 +13,13 @@ The snippet below shows sample code that creates two files in the external stora
 
 {{ MastgTest.kt }}
 
-### Steps
 
-1. Install an app on your device.
-2. Execute `run_before.sh` which runs @MASTG-TOOL-0004.
-3. Open an app and exercise it to trigger file creations.
-4. Execute `run_after.sh`.
-5. Close the app once you finish testing.
+<!---
+TODO: This is for the PoC only, should be automated
+-->
 
-{{ run_before.sh # run_after.sh }}
+### Test Implementations
 
-### Observation
+1. [Frida.re](./tools/frida/MASTG-DEMO-0001-FRIDA.md)
+2. [adb](./tools/adb/MASTG-DEMO-0001-ADB.md)
 
-There is a list of all created files inside `output.txt`.
-
-{{ output.txt }}
-
-Their content is inside the `./new_files/` directory and contains:
-
-A password:
-
-{{ new_files/secret.txt }}
-
-And an API key:
-
-{{ new_files/secretFile75.txt }}
-
-### Evaluation
-
-This test fails because the files are not encrypted and contain sensitive data (a password and an API key). You can further confirm this by reverse engineering the app and inspecting the code.
