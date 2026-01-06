@@ -1,20 +1,74 @@
 {
-  "id": "a0a0815c-fa2c-43a5-ad35-10c2a3d097cd",
+  "type": "summary",
+  "hooks": [
+    {
+      "class": "android.security.keystore.KeyGenParameterSpec$Builder",
+      "method": "setBlockModes",
+      "overloads": [
+        {
+          "args": [
+            "[Ljava.lang.String;"
+          ]
+        }
+      ]
+    },
+    {
+      "class": "android.security.keystore.KeyGenParameterSpec$Builder",
+      "method": "setRandomizedEncryptionRequired",
+      "overloads": [
+        {
+          "args": [
+            "boolean"
+          ]
+        }
+      ]
+    },
+    {
+      "class": "android.security.keystore.KeyProtection$Builder",
+      "method": "setBlockModes",
+      "overloads": [
+        {
+          "args": [
+            "[Ljava.lang.String;"
+          ]
+        }
+      ]
+    },
+    {
+      "class": "android.security.keystore.KeyProtection$Builder",
+      "method": "setRandomizedEncryptionRequired",
+      "overloads": [
+        {
+          "args": [
+            "boolean"
+          ]
+        }
+      ]
+    }
+  ],
+  "totalHooks": 4,
+  "errors": [],
+  "totalErrors": 0
+}
+{
+  "id": "d65aa701-0a6d-4684-87df-4ee234719637",
+  "type": "hook",
   "category": "CRYPTO",
-  "time": "2025-09-12T16:45:55.639Z",
+  "time": "2026-01-06T14:03:24.461Z",
   "class": "android.security.keystore.KeyProtection$Builder",
   "method": "setBlockModes",
+  "instanceId": 61589359,
   "stackTrace": [
     "android.security.keystore.KeyProtection$Builder.setBlockModes(Native Method)",
-    "org.owasp.mastestapp.MastgTest.mastgTest(MastgTest.kt:41)",
-    "org.owasp.mastestapp.MainActivityKt.MainScreen$lambda$6$lambda$5(MainActivity.kt:55)",
-    "org.owasp.mastestapp.MainActivityKt.$r8$lambda$PtKdgqcXvbS9cMNZVWq3K3GGQKQ(Unknown Source:0)",
+    "org.owasp.mastestapp.MastgTest.mastgTest(MastgTest.kt:38)",
+    "org.owasp.mastestapp.MainActivityKt.MainScreen$lambda$12$lambda$11(MainActivity.kt:101)",
+    "org.owasp.mastestapp.MainActivityKt.$r8$lambda$Pm6AsbKBmypP53K-UABM21E_Xxk(Unknown Source:0)",
     "org.owasp.mastestapp.MainActivityKt$$ExternalSyntheticLambda3.run(D8$$SyntheticClass:0)",
-    "java.lang.Thread.run(Thread.java:1012)"
+    "java.lang.Thread.run(Thread.java:1119)"
   ],
   "inputParameters": [
     {
-      "type": "[Ljava.lang.String;",
+      "declaredType": "[Ljava.lang.String;",
       "value": [
         "ECB"
       ]
@@ -22,28 +76,33 @@
   ],
   "returnValue": [
     {
-      "type": "android.security.keystore.KeyProtection$Builder",
-      "value": "<instance: android.security.keystore.KeyProtection$Builder>"
+      "declaredType": "android.security.keystore.KeyProtection$Builder",
+      "value": "<instance: android.security.keystore.KeyProtection$Builder>",
+      "runtimeType": "android.security.keystore.KeyProtection$Builder",
+      "instanceId": "61589359",
+      "instanceToString": "android.security.keystore.KeyProtection$Builder@3abc76f"
     }
   ]
 }
 {
-  "id": "1ade0c02-74c8-4629-bbd4-5f51c9616b68",
+  "id": "4ff81c7b-dd56-4aa5-8655-dbba53d1640e",
+  "type": "hook",
   "category": "CRYPTO",
-  "time": "2025-09-12T16:45:55.671Z",
+  "time": "2026-01-06T14:03:24.505Z",
   "class": "android.security.keystore.KeyProtection$Builder",
   "method": "setBlockModes",
+  "instanceId": 119582042,
   "stackTrace": [
     "android.security.keystore.KeyProtection$Builder.setBlockModes(Native Method)",
-    "org.owasp.mastestapp.MastgTest.mastgTest(MastgTest.kt:65)",
-    "org.owasp.mastestapp.MainActivityKt.MainScreen$lambda$6$lambda$5(MainActivity.kt:55)",
-    "org.owasp.mastestapp.MainActivityKt.$r8$lambda$PtKdgqcXvbS9cMNZVWq3K3GGQKQ(Unknown Source:0)",
+    "org.owasp.mastestapp.MastgTest.mastgTest(MastgTest.kt:63)",
+    "org.owasp.mastestapp.MainActivityKt.MainScreen$lambda$12$lambda$11(MainActivity.kt:101)",
+    "org.owasp.mastestapp.MainActivityKt.$r8$lambda$Pm6AsbKBmypP53K-UABM21E_Xxk(Unknown Source:0)",
     "org.owasp.mastestapp.MainActivityKt$$ExternalSyntheticLambda3.run(D8$$SyntheticClass:0)",
-    "java.lang.Thread.run(Thread.java:1012)"
+    "java.lang.Thread.run(Thread.java:1119)"
   ],
   "inputParameters": [
     {
-      "type": "[Ljava.lang.String;",
+      "declaredType": "[Ljava.lang.String;",
       "value": [
         "ECB"
       ]
@@ -51,55 +110,65 @@
   ],
   "returnValue": [
     {
-      "type": "android.security.keystore.KeyProtection$Builder",
-      "value": "<instance: android.security.keystore.KeyProtection$Builder>"
+      "declaredType": "android.security.keystore.KeyProtection$Builder",
+      "value": "<instance: android.security.keystore.KeyProtection$Builder>",
+      "runtimeType": "android.security.keystore.KeyProtection$Builder",
+      "instanceId": "119582042",
+      "instanceToString": "android.security.keystore.KeyProtection$Builder@720ad5a"
     }
   ]
 }
 {
-  "id": "48a8aa46-4ada-470e-bb5e-47ceefb53e1b",
+  "id": "8f6b9f61-9dc6-4d6b-87c0-4ccc76688600",
+  "type": "hook",
   "category": "CRYPTO",
-  "time": "2025-09-12T16:45:55.673Z",
+  "time": "2026-01-06T14:03:24.508Z",
   "class": "android.security.keystore.KeyProtection$Builder",
   "method": "setRandomizedEncryptionRequired",
+  "instanceId": 119582042,
   "stackTrace": [
     "android.security.keystore.KeyProtection$Builder.setRandomizedEncryptionRequired(Native Method)",
-    "org.owasp.mastestapp.MastgTest.mastgTest(MastgTest.kt:67)",
-    "org.owasp.mastestapp.MainActivityKt.MainScreen$lambda$6$lambda$5(MainActivity.kt:55)",
-    "org.owasp.mastestapp.MainActivityKt.$r8$lambda$PtKdgqcXvbS9cMNZVWq3K3GGQKQ(Unknown Source:0)",
+    "org.owasp.mastestapp.MastgTest.mastgTest(MastgTest.kt:65)",
+    "org.owasp.mastestapp.MainActivityKt.MainScreen$lambda$12$lambda$11(MainActivity.kt:101)",
+    "org.owasp.mastestapp.MainActivityKt.$r8$lambda$Pm6AsbKBmypP53K-UABM21E_Xxk(Unknown Source:0)",
     "org.owasp.mastestapp.MainActivityKt$$ExternalSyntheticLambda3.run(D8$$SyntheticClass:0)",
-    "java.lang.Thread.run(Thread.java:1012)"
+    "java.lang.Thread.run(Thread.java:1119)"
   ],
   "inputParameters": [
     {
-      "type": "boolean",
+      "declaredType": "boolean",
       "value": false
     }
   ],
   "returnValue": [
     {
-      "type": "android.security.keystore.KeyProtection$Builder",
-      "value": "<instance: android.security.keystore.KeyProtection$Builder>"
+      "declaredType": "android.security.keystore.KeyProtection$Builder",
+      "value": "<instance: android.security.keystore.KeyProtection$Builder>",
+      "runtimeType": "android.security.keystore.KeyProtection$Builder",
+      "instanceId": "119582042",
+      "instanceToString": "android.security.keystore.KeyProtection$Builder@720ad5a"
     }
   ]
 }
 {
-  "id": "fe6e69b6-2764-473e-80d2-5a242b56947e",
+  "id": "59f6a5d4-5589-435f-8825-3ff09e95d8c4",
+  "type": "hook",
   "category": "CRYPTO",
-  "time": "2025-09-12T16:45:55.683Z",
+  "time": "2026-01-06T14:03:24.531Z",
   "class": "android.security.keystore.KeyGenParameterSpec$Builder",
   "method": "setBlockModes",
+  "instanceId": 190278539,
   "stackTrace": [
     "android.security.keystore.KeyGenParameterSpec$Builder.setBlockModes(Native Method)",
-    "org.owasp.mastestapp.MastgTest.mastgTest(MastgTest.kt:90)",
-    "org.owasp.mastestapp.MainActivityKt.MainScreen$lambda$6$lambda$5(MainActivity.kt:55)",
-    "org.owasp.mastestapp.MainActivityKt.$r8$lambda$PtKdgqcXvbS9cMNZVWq3K3GGQKQ(Unknown Source:0)",
+    "org.owasp.mastestapp.MastgTest.mastgTest(MastgTest.kt:89)",
+    "org.owasp.mastestapp.MainActivityKt.MainScreen$lambda$12$lambda$11(MainActivity.kt:101)",
+    "org.owasp.mastestapp.MainActivityKt.$r8$lambda$Pm6AsbKBmypP53K-UABM21E_Xxk(Unknown Source:0)",
     "org.owasp.mastestapp.MainActivityKt$$ExternalSyntheticLambda3.run(D8$$SyntheticClass:0)",
-    "java.lang.Thread.run(Thread.java:1012)"
+    "java.lang.Thread.run(Thread.java:1119)"
   ],
   "inputParameters": [
     {
-      "type": "[Ljava.lang.String;",
+      "declaredType": "[Ljava.lang.String;",
       "value": [
         "ECB"
       ]
@@ -107,8 +176,11 @@
   ],
   "returnValue": [
     {
-      "type": "android.security.keystore.KeyGenParameterSpec$Builder",
-      "value": "<instance: android.security.keystore.KeyGenParameterSpec$Builder>"
+      "declaredType": "android.security.keystore.KeyGenParameterSpec$Builder",
+      "value": "<instance: android.security.keystore.KeyGenParameterSpec$Builder>",
+      "runtimeType": "android.security.keystore.KeyGenParameterSpec$Builder",
+      "instanceId": "190278539",
+      "instanceToString": "android.security.keystore.KeyGenParameterSpec$Builder@b576b8b"
     }
   ]
 }
