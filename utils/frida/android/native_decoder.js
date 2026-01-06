@@ -159,3 +159,5 @@ function filtersPass(decodedList, descriptors) {
   }
   return anyFilters ? true : true; // if no filters present, pass
 }
+
+module.exports = { filtersPass, decodeArgByDescriptor, _arrayBufferToHex };

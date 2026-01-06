@@ -1,4 +1,4 @@
-var target = {
+export var target = {
   category: "PRIVACY",
   hooks: [
     {
