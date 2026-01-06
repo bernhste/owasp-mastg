@@ -1,22 +1,24 @@
 #!/bin/bash
 
 hookPath=$1
-hook=$(cat "$hookPath")
-decoderScript=$(cat "$(dirname $0)"/android_decoder.js)
+demoPath=$(pwd)
 fridaScript=$(cat "$(dirname $0)"/base_script.js)
+
+# create temporary work folder
 randomNumber=$RANDOM
+workDir=/tmp/frida_$randomNumber
+mkdir $workDir
 
-# merging the different parts of the frida.re scripts and writing it to a temporary file
-{
-  echo "$hook"
-  echo $'\n'
-  echo "$decoderScript"
-  echo $'\n'
-  echo "$fridaScript"
-}  > /tmp/frida_script_$randomNumber.js
+# copy relevant files temporary work folder
+cp $hookPath $workDir
+cp -rf ../../../../utils/frida/android/* $workDir
 
-# run the merged frida.re script
-frida -U -f org.owasp.mastestapp -l /tmp/frida_script_$randomNumber.js -o output.json
+# compile the script in the work folder
+cd $workDir
+frida-compile $workDir/base_script.js -o $workDir/compiled_script.js
+
+# run the compiled script
+frida -U -f org.owasp.mastestapp -l $workDir/compiled_script.js -o  $demoPath/output.json
 
 # cleanup
-rm /tmp/frida_script_$randomNumber.js
+rm -rf $workDir

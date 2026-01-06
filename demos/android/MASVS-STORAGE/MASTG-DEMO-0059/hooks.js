@@ -1,4 +1,4 @@
-var target = {
+export var target = {
   category: "STORAGE",
   demo: "0059",
   hooks: [
