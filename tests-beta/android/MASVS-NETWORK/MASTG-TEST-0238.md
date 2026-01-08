@@ -25,8 +25,6 @@ Hook the following methods make sure, that they are not initiated with protocols
 - `java.net.URI(String scheme, String ssp, String fragment)`
 - `java.net.URI(String scheme, String host, String path, String fragment)`
 - `java.net.URI(String scheme, String authority, String path, String query, String fragment)`
-- `java.net.Socket(String host, int port, boolean stream)`
-- `java.net.Socket(String host, int port, InetAddress localAddr, int localPort)`
 - `android.net.Uri.parse(String uriString)`
 - `android.net.Uri.Builder.scheme(String scheme)`
 - `android.webkit.WebView.loadUrl(String url)`
@@ -39,7 +37,7 @@ Hook the following methods make sure, that they are not initiated with protocols
 - `android.webkit.WebViewClient.onPageStarted(WebView view, String url, Bitmap favicon)`
 - `android.webkit.WebViewClient.shouldInterceptRequest(WebView view, String url)`
 - `android.webkit.WebViewClient.shouldOverrideUrlLoading(WebView view, String url)`
-- `android.media.MediaPlayer.setDataSource(String path)`   // http/rtsp
+- `android.media.MediaPlayer.setDataSource(String path)`
 
 ## Observation
 
