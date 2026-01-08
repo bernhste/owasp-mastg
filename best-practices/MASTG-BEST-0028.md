@@ -8,9 +8,9 @@ knowledge: [MASTG-KNOW-0109]
 
 Use the Java/Kotlin layer for networking only. 
 
-The @MASTG-KNOW-0109 provides libraries which are secured by the @MASTG-KNOW-0014.
+The @MASTG-KNOW-0109 provide libraries which are secured by the @MASTG-KNOW-0014.
 
-As they come with the Android Operating System, the app developer does not need to provide these libraries. In order to make sure, that the libraries are secure, it is recommended testing if the OS is up to date and not affected by known vulnerabilities (@MASVS-CODE-1).
+As they come with the Android Operating System, the app developer does not need to provide these libraries. In order to make sure, that the libraries are secure, it is recommended testing if the OS is up to date and not affected by known vulnerabilities (@MASTG-TEST-0245).
 
 
 ## If Native Networking Is Necessary
