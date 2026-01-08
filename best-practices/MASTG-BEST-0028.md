@@ -19,4 +19,6 @@ If you develop native code using the [Android Native Development Kit (NDK)](http
 
 You, or any networking library you use, can still directly use POSIX sockets. However, @MASTG-KNOW-0014 will not apply automatically. 
 
-Some applications, like games or streaming applications, require fast network connections. In this case, the developer is responsible to make sure the library is up to date (@MASTG-TEST-0274) configured securely (@MASTG-TEST-0020).
+Some applications, like games or streaming apps, require low latency network connections. Hence they often provide their own native network stack. 
+
+In this case, the developer is responsible to make sure the libraries are to date (@MASTG-TEST-0274) and [configured securely](../Document/0x04f-Testing-Network-Communication.md#verifying-the-tls-settings).
