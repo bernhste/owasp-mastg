@@ -49,7 +49,7 @@ try {
 Using the low level API, developers can establish TCP/UDP connection using `java.net.Socket` or `java.net.DatagramSocket` respectively.
 
 !!! Warning
-    [Android Network Security Configuration](./MASTG-KNOW-0014.md) cannot not apply to raw sockets. The means it is the developers responsibility to make sure, that no sensitive data is transmitted. It is therefore not recommended using raw sockets, if more secure options are available.
+    @MASTG-KNOW-0014 cannot not apply to raw sockets. The means it is the developers responsibility to make sure, that no sensitive data is transmitted. It is therefore not recommended using raw sockets, if more secure options are available.
 
 The following code demonstrates how a TCP connection is established and the plain text `HEARTBEAT: OK` is transmitted:
 
@@ -69,20 +69,20 @@ try {
 }
 ```
 
-`javax.net.ssl.SSLSocket` is a direct subclass from `java.net.Socket` and can be used to establish TLS connections. The class does apply the policy defined in the [Android Network Security Configuration](./MASTG-KNOW-0014.md). The connection will _not be established_ if certificate chain does not contain a pinned a certificate.
+`javax.net.ssl.SSLSocket` is a direct subclass from `java.net.Socket` and can be used to establish TLS connections. The class does apply the policy defined in the @MASTG-KNOW-0014. The connection will _not be established_ if certificate chain does not contain a pinned a certificate.
 
 ## android.net
 
 This package implements network related classes which server various mobile devices or Android specific needs. Examples are:
 
-- *CaptivePortal* A class allowing apps handling the ConnectivityManager.ACTION_CAPTIVE_PORTAL_SIGN_IN activity to indicate to the system different outcomes of captive portal sign in. 
-- *ConnectivityManager* Class that answers queries about the state of network connectivity such as monitoring Wi-Fi, GPRS or UMTS connections.
-- *DnsResolver*: Dns resolver class for asynchronous dns querying. 
-- *LocalSocket*: Creates a (non-server) socket in the UNIX-domain namespace. Can be used to connect to an existing local server socket. This is also possible across different apps.
-- *LocalServerSocket*: Non-standard class for creating an inbound UNIX-domain socket in the Linux abstract namespace. Other apps can connect to this socket using `LocalSocket`.
-- *Proxy*: A convenience class for accessing the user and default proxy settings.
-- *Uri*: Immutable URI reference.
-- *VpnManager*: This class provides an interface for apps to manage platform VPN profiles. Apps can use this API to provide profiles with which the platform can set up a VPN without further app intermediation. 
+- **CaptivePortal** A class allowing apps handling the ConnectivityManager.ACTION_CAPTIVE_PORTAL_SIGN_IN activity to indicate to the system different outcomes of captive portal sign in. 
+- **ConnectivityManager** Class that answers queries about the state of network connectivity such as monitoring Wi-Fi, GPRS or UMTS connections.
+- **DnsResolver**: Dns resolver class for asynchronous dns querying. 
+- **LocalSocket**: Creates a (non-server) socket in the UNIX-domain namespace. Can be used to connect to an existing local server socket. This is also possible across different apps.
+- **LocalServerSocket**: Non-standard class for creating an inbound UNIX-domain socket in the Linux abstract namespace. Other apps can connect to this socket using `LocalSocket`.
+- **Proxy**: A convenience class for accessing the user and default proxy settings.
+- **Uri**: Immutable URI reference.
+- **VpnManager**: This class provides an interface for apps to manage platform VPN profiles. Apps can use this API to provide profiles with which the platform can set up a VPN without further app intermediation. 
 
 While most classes add functionality not covered by `java.net`, some implement the same functionality but differ in certain areas. 
 
@@ -100,4 +100,4 @@ When developing native code using the Android NDK toolset, there are no librarie
 If a developer wants to do networking with protocols such as HTTP or TLS in the native code, they have to provide their own library. 
 
 !!! Warning
-    [Android Network Security Configuration](./MASTG-KNOW-0014.md) may not be respected by custom libraries. The means it is the developers responsibility to make sure, that no sensitive data is transmitted. It is therefore not recommended doing networking in native code in general.
+    @MASTG-KNOW-0014 may not be respected by custom libraries. The means it is the developers responsibility to make sure, that no sensitive data is transmitted. It is therefore not recommended doing networking in native code in general.
