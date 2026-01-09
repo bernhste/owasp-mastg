@@ -34,7 +34,7 @@ val schemes = listOf(
 )
 ```
 
-The demo does not really load the remote resources. If these URIs are used, data could be sent in clear text over the network. However, it may be that @MASTG-KNOW-0014 prohibits the establishment of the connection.
+The demo does not really load the remote resources. If these URIs are used, data could be sent in clear text over the network. However, it may be that @MASTG-KNOW-0014 prohibits the connection setup.
 
 {{ MastgTest.kt }}
 
@@ -50,15 +50,13 @@ The demo does not really load the remote resources. If these URIs are used, data
 
 ### Observation
 
-The script will generate the file `output.txt` which contains information about how the functions were called. 
+The script will generate the file `output.json` which contains information about how the functions were called. 
 
-As some of the API does n
-
-{{ output.txt }}
+{{ output.json }}
 
 ### Evaluation
 
-1. Run `evaluate.sh`. This script will parse the generated `output.txt`, assess the insecure URIs and write the report `evaluation.txt`.
+Run `evaluate.sh output.json`. This script will parse the generated `output.json`, assess the URIs and write the identified risks to the file `evaluation.txt`.
 
 {{ evaluate.sh # evaluation.txt}}
 
