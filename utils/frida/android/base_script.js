@@ -84,7 +84,7 @@ function registerHook(
     let returnType = parseReturnValue(methodHeader);
 
     let instanceId;
-    if (this && this.$className && this.$h === null ) {
+    if (this && this.$className && typeof this.$h === 'undefined') {
       instanceId = 'static';
     } else {
       // call Java’s identityHashCode on the real object
@@ -109,12 +109,7 @@ function registerHook(
     };
 
     try {
-      let returnValue;
-      if (method === "$init") {
-        returnValue = toHook.overloads[overloadIndex].apply(this, arguments);
-      } else {
-        returnValue = this[method].apply(this, arguments);
-      }
+      let returnValue = this[method].apply(this, arguments);
       event.returnValue = decodeArguments([returnType], [returnValue]);
       console.log(JSON.stringify(event, null, 2))
       return returnValue;
@@ -319,11 +314,8 @@ function registerAllHooks(hook, categoryName, cachedOperations) {
   });
 }
 
-
-
-setTimeout(() => {
-
 Java.perform(function () {
+
   // Pre-compute hook operations once to avoid redundant processing
   let hookOperationsCache = [];
   target.hooks.forEach(function (hook, _) {
@@ -383,6 +375,3 @@ Java.perform(function () {
   });
 
 });
-
-
-}, 2000);
