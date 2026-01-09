@@ -84,16 +84,7 @@ function registerHook(
     let returnType = parseReturnValue(methodHeader);
 
     let instanceId;
-    
-
-    console.log("Hello")
-    console.log(this.$h)
-    console.log("World")
-    console.log(typeof this.$h)
-    console.log("Bla")
-    // console.log(this)
-
-    if (this && this.$className && typeof this.$h === 'undefined') {
+    if (this && this.$className && this.$h === null ) {
       instanceId = 'static';
     } else {
       // call Java’s identityHashCode on the real object
