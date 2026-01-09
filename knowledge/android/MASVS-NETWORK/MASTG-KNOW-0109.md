@@ -88,9 +88,15 @@ While most classes add functionality not covered by `java.net`, some implement t
 
 For examples classes like `java.net.InetAddress` use the operating systems resolver and are synchronous. `android.net.DnsResolver` on the other hand resolves domains asynchronously and can caches queries system wide.
 
-A second noteworthy example is `android.net.Uri`. Compared to `java.net.URI` and `java.net.URL`, Androids implementation is faster as it does only a minimal amount of validation and does not perform a DNS query. Also it implements the interface `android.os.Parcelable` which means URIs can be passed between Android components more easily.
+A second noteworthy example is `android.net.Uri`. Compared to `java.net.URI` and `java.net.URL`, Androids implementation is faster as it does only a minimal amount of validation and does not perform a DNS query. The reason for that is that they are often used internally only. For example, Android Intents use them heavily. Also the class implements the interface `android.os.Parcelable` which means URIs can be passed between Android components more easily.
 
-These examples show, tha different purposes of the two app level network packages.
+These examples show, the different purposes of the two app level network packages.
+
+
+## Other Android API Using Network
+
+TODO: There are also other classes which can be used to establish network connections to remote servers. 
+
 
 
 ## Native Code Networking

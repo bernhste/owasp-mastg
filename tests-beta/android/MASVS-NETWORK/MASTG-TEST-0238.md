@@ -9,13 +9,13 @@ profiles: [L1, L2]
 
 ## Overview
 
-This test intercepts Android network API (@MASTG-KNOW-0109) in the packages `java.net`, `android.net` and `android.webkit` used to establish network connections in oder to detect insecure protocols.
+This test intercepts Android network API (@MASTG-KNOW-0109) in the packages `java.net`, `android.net` and `android.webkit` used to establish network connections in oder to detect insecure URI schemes.
 
-This is beneficial if a security tester is not able to intercept the network traffic as described in @MASTG-TEST-0236. Further, it is possible to detect insecure protocols in obfuscated apps as solely @MASTG-TECH-0048 may not be sufficient to detect them.
+This is beneficial if a security tester is not able to intercept the network traffic as described in @MASTG-TEST-0236. Further, it is possible to detect insecure URI schemes in obfuscated apps as solely @MASTG-TECH-0048 may not be sufficient to detect them.
 
 ## Steps
 
-Hook the following methods make sure, that they are not initiated with protocols/schemes which don't support encryption:
+Hook the following methods make sure, that they are not initiated with URI schemes which don't support encryption:
 
 - `java.net.URL(String spec)`
 - `java.net.URL(String protocol, String host, int port, String file)`
@@ -41,23 +41,30 @@ Hook the following methods make sure, that they are not initiated with protocols
 
 ## Observation
 
-The output should contain information about the used protocols. 
+The output contains information about the used URI schemes.
 
 ## Evaluation
 
-The test passes, if all protocols are considered secure. Examples are:
+The test passes, if all URI schemes are considered secure. Examples are:
 
 - HTTPS
+- WSS
 - SIPS
 - LDAPS
 - FTPS
 - SFTP
-- RTSP
+- RTSPS
+- STUNS
 
-The test fails if a protocol is considered insecure. Examples are:
+The test fails if a URI scheme is considered insecure. Examples are:
 
 - HTTP
+- WS
 - SIP
 - LDAP
 - FTP
-- SRTSP
+- RTSP
+- STUN
+
+A comprehensive list of well known URI schemes can found here: [iana Uniform Resource Identifier (URI) Schemes
+](https://www.iana.org/assignments/uri-schemes/uri-schemes.xhtml)
