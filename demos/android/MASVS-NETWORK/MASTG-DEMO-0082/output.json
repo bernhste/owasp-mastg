@@ -200,117 +200,21 @@
   "errors": [],
   "totalErrors": 0
 }
+Hello
+null
+World
+object
+Bla
+Error in identityHashCode Error: identityHashCode(): argument types do not match any of:
+	.overload('java.lang.Object')
 {
-  "id": "34f7e2de-334a-4bc1-a692-73fbe2c31f94",
+  "id": "c2590d6e-7022-463b-9c77-60a76bc23523",
   "type": "hook",
   "category": "NETWORK",
-  "time": "2026-01-09T15:12:12.528Z",
-  "class": "java.net.URL",
-  "method": "$init",
-  "instanceId": 61589359,
-  "stackTrace": [
-    "java.net.URL.<init>(Native Method)",
-    "java.net.URL.<init>(URL.java:498)",
-    "java.net.URL.<init>(Native Method)",
-    "java.net.URL.<init>(URL.java:447)",
-    "java.net.URL.<init>(Native Method)",
-    "org.owasp.mastestapp.MastgTest.mastgTest(MastgTest.kt:36)",
-    "org.owasp.mastestapp.MainActivityKt.MainScreen$lambda$12$lambda$11(MainActivity.kt:101)",
-    "org.owasp.mastestapp.MainActivityKt.$r8$lambda$Pm6AsbKBmypP53K-UABM21E_Xxk(Unknown Source:0)"
-  ],
-  "inputParameters": [
-    {
-      "declaredType": "java.net.URL",
-      "value": "void"
-    },
-    {
-      "declaredType": "java.lang.String",
-      "value": "https://mas.owasp.org"
-    },
-    {
-      "declaredType": "java.net.URLStreamHandler",
-      "value": "void"
-    }
-  ],
-  "returnValue": [
-    {
-      "declaredType": "void",
-      "value": "void"
-    }
-  ]
-}
-{
-  "id": "95881072-1105-4113-a9fd-45d32f5fbb8d",
-  "type": "hook",
-  "category": "NETWORK",
-  "time": "2026-01-09T15:12:12.523Z",
-  "class": "java.net.URL",
-  "method": "$init",
-  "instanceId": 61589359,
-  "stackTrace": [
-    "java.net.URL.<init>(Native Method)",
-    "java.net.URL.<init>(URL.java:447)",
-    "java.net.URL.<init>(Native Method)",
-    "org.owasp.mastestapp.MastgTest.mastgTest(MastgTest.kt:36)",
-    "org.owasp.mastestapp.MainActivityKt.MainScreen$lambda$12$lambda$11(MainActivity.kt:101)",
-    "org.owasp.mastestapp.MainActivityKt.$r8$lambda$Pm6AsbKBmypP53K-UABM21E_Xxk(Unknown Source:0)",
-    "org.owasp.mastestapp.MainActivityKt$$ExternalSyntheticLambda3.run(D8$$SyntheticClass:0)",
-    "java.lang.Thread.run(Thread.java:1119)"
-  ],
-  "inputParameters": [
-    {
-      "declaredType": "java.net.URL",
-      "value": "void"
-    },
-    {
-      "declaredType": "java.lang.String",
-      "value": "https://mas.owasp.org"
-    }
-  ],
-  "returnValue": [
-    {
-      "declaredType": "void",
-      "value": "void"
-    }
-  ]
-}
-{
-  "id": "a8313ba7-f97d-46b3-925b-aa4ff856d96a",
-  "type": "hook",
-  "category": "NETWORK",
-  "time": "2026-01-09T15:12:12.521Z",
-  "class": "java.net.URL",
-  "method": "$init",
-  "instanceId": 61589359,
-  "stackTrace": [
-    "java.net.URL.<init>(Native Method)",
-    "org.owasp.mastestapp.MastgTest.mastgTest(MastgTest.kt:36)",
-    "org.owasp.mastestapp.MainActivityKt.MainScreen$lambda$12$lambda$11(MainActivity.kt:101)",
-    "org.owasp.mastestapp.MainActivityKt.$r8$lambda$Pm6AsbKBmypP53K-UABM21E_Xxk(Unknown Source:0)",
-    "org.owasp.mastestapp.MainActivityKt$$ExternalSyntheticLambda3.run(D8$$SyntheticClass:0)",
-    "java.lang.Thread.run(Thread.java:1119)"
-  ],
-  "inputParameters": [
-    {
-      "declaredType": "java.lang.String",
-      "value": "https://mas.owasp.org"
-    }
-  ],
-  "returnValue": [
-    {
-      "declaredType": "void",
-      "value": "void"
-    }
-  ]
-}
-{
-  "id": "7b08fcfa-ecdc-4940-ad27-a203d43339b2",
-  "type": "hook",
-  "category": "NETWORK",
-  "time": "2026-01-09T15:12:12.533Z",
+  "time": "2026-01-09T15:34:33.619Z",
   "class": "android.net.Uri",
   "method": "parse",
-  "instanceId": "static",
+  "instanceId": "error",
   "stackTrace": [
     "android.net.Uri.parse(Native Method)",
     "org.owasp.mastestapp.MastgTest.mastgTest(MastgTest.kt:149)",
@@ -330,7 +234,7 @@
       "declaredType": "android.net.Uri",
       "value": "https://mas.owasp.org",
       "runtimeType": "android.net.Uri$StringUri",
-      "instanceId": "96595068",
+      "instanceId": "61589359",
       "instanceToString": "https://mas.owasp.org"
     }
   ]
