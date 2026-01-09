@@ -17,7 +17,7 @@ This is beneficial if a security tester is not able to intercept the network tra
 
 Hook methods which take URI schemes as arguments and verify, that they are not insecure meaning they refer to a protocol which does not support transport layer encryption for example.
 
-The following list enumerates @MASTG-KNOW-0014 which should be tested:
+The following list enumerates @MASTG-KNOW-0109 which should be tested:
 
 - `java.net.URL(String spec)`
 - `java.net.URL(String protocol, String host, int port, String file)`
