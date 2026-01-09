@@ -109,7 +109,12 @@ function registerHook(
     };
 
     try {
-      let returnValue = this[method].apply(this, arguments);
+      let returnValue;
+      if (method === "$init") {
+        returnValue = toHook.overloads[overloadIndex].apply(this, arguments);
+      } else {
+        returnValue = this[method].apply(this, arguments);
+      }
       event.returnValue = decodeArguments([returnType], [returnValue]);
       console.log(JSON.stringify(event, null, 2))
       return returnValue;
