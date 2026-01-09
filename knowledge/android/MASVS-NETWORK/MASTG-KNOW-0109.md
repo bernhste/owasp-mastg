@@ -92,13 +92,6 @@ A second noteworthy example is `android.net.Uri`. Compared to `java.net.URI` and
 
 These examples show, the different purposes of the two app level network packages.
 
-
-## Other Android API Using Network
-
-TODO: There are also other classes which can be used to establish network connections to remote servers. 
-
-
-
 ## Native Code Networking
 
 When developing native code using the Android NDK toolset, there are no libraries available by default which implement protocols above the transport layer. Developers can interact with POSIX sockets and the [NDK Networking API](https://developer.android.com/ndk/reference/group/networking).
