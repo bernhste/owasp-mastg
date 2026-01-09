@@ -31,61 +31,67 @@ class MastgTest(private val context: Context) {
             val secureUri = "${scheme.secure}://$host"
             val insecureUri = "${scheme.insecure}://$host"
 
-            // java.net.URL(String spec)
-            try {
-                URL(secureUri)
-                r.add(Status.PASS, "Secure URL created with $secureUri (String spec)")
-            } catch (e: Exception) {
-                r.add(Status.ERROR, e.toString())
-            }
-            try {
-                URL(insecureUri)
-                r.add(Status.FAIL, "Insecure URL created with $insecureUri (String spec)")
-            } catch (e: Exception) {
-                r.add(Status.ERROR, e.toString())
+            // java.net.URL throws an exception if the scheme is not http, https or ftp
+            if( scheme.insecure == "http" || scheme.insecure == "ftp" ){
+
+                // java.net.URL(String spec)
+                try {
+                    val test = URL(secureUri)
+                    print(test)
+                    r.add(Status.PASS, "Secure URL created with $secureUri (String spec)")
+                } catch (e: Exception) {
+                    r.add(Status.ERROR, e.toString())
+                }
+                try {
+                    URL(insecureUri)
+                    r.add(Status.FAIL, "Insecure URL created with $insecureUri (String spec)")
+                } catch (e: Exception) {
+                    r.add(Status.ERROR, e.toString())
+                }
+
+                // java.net.URL(String protocol, String host, int port, String file)
+                try {
+                    URL(scheme.secure, host, 443, "/")
+                    r.add(Status.PASS, "Secure URL created with ${scheme.secure}://$host:443/ (String protocol, String host, int port, String file)")
+                } catch (e: Exception) {
+                    r.add(Status.ERROR, e.toString())
+                }
+                try {
+                    URL(scheme.insecure, host, 80, "/")
+                    r.add(Status.FAIL, "Insecure URL created with ${scheme.insecure}://$host:80/ (String protocol, String host, int port, String file)")
+                } catch (e: Exception) {
+                    r.add(Status.ERROR, e.toString())
+                }
+
+                // java.net.URL(String protocol, String host, int port, String file, URLStreamHandler handler)
+                try {
+                    URL(scheme.secure, host, 443, "/", null)
+                    r.add(Status.PASS, "Secure URL created with ${scheme.secure}://$host:443/ (String protocol, String host, int port, String file, URLStreamHandler handler)")
+                } catch (e: Exception) {
+                    r.add(Status.ERROR, e.toString())
+                }
+                try {
+                    URL(scheme.insecure, host, 80, "/", null)
+                    r.add(Status.FAIL, "Insecure URL created with ${scheme.insecure}://$host:80/ (String protocol, String host, int port, String file, URLStreamHandler handler)")
+                } catch (e: Exception) {
+                    r.add(Status.ERROR, e.toString())
+                }
+
+                // java.net.URL(String protocol, String host, String file)
+                try {
+                    URL(scheme.secure, host, "/")
+                    r.add(Status.PASS, "Secure URL created with ${scheme.secure}://$host/ (String protocol, String host, String file)")
+                } catch (e: Exception) {
+                    r.add(Status.ERROR, e.toString())
+                }
+                try {
+                    URL(scheme.insecure, host, "/")
+                    r.add(Status.FAIL, "Insecure URL created with ${scheme.insecure}://$host/ (String protocol, String host, String file)")
+                } catch (e: Exception) {
+                    r.add(Status.ERROR, e.toString())
+                }
             }
 
-            // java.net.URL(String protocol, String host, int port, String file)
-            try {
-                URL(scheme.secure, host, 443, "/")
-                r.add(Status.PASS, "Secure URL created with ${scheme.secure}://$host:443/ (String protocol, String host, int port, String file)")
-            } catch (e: Exception) {
-                r.add(Status.ERROR, e.toString())
-            }
-            try {
-                URL(scheme.insecure, host, 80, "/")
-                r.add(Status.FAIL, "Insecure URL created with ${scheme.insecure}://$host:80/ (String protocol, String host, int port, String file)")
-            } catch (e: Exception) {
-                r.add(Status.ERROR, e.toString())
-            }
-
-            // java.net.URL(String protocol, String host, int port, String file, URLStreamHandler handler)
-            try {
-                URL(scheme.secure, host, 443, "/", null)
-                r.add(Status.PASS, "Secure URL created with ${scheme.secure}://$host:443/ (String protocol, String host, int port, String file, URLStreamHandler handler)")
-            } catch (e: Exception) {
-                r.add(Status.ERROR, e.toString())
-            }
-            try {
-                URL(scheme.insecure, host, 80, "/", null)
-                r.add(Status.FAIL, "Insecure URL created with ${scheme.insecure}://$host:80/ (String protocol, String host, int port, String file, URLStreamHandler handler)")
-            } catch (e: Exception) {
-                r.add(Status.ERROR, e.toString())
-            }
-
-            // java.net.URL(String protocol, String host, String file)
-            try {
-                URL(scheme.secure, host, "/")
-                r.add(Status.PASS, "Secure URL created with ${scheme.secure}://$host/ (String protocol, String host, String file)")
-            } catch (e: Exception) {
-                r.add(Status.ERROR, e.toString())
-            }
-            try {
-                URL(scheme.insecure, host, "/")
-                r.add(Status.FAIL, "Insecure URL created with ${scheme.insecure}://$host/ (String protocol, String host, String file)")
-            } catch (e: Exception) {
-                r.add(Status.ERROR, e.toString())
-            }
 
             // java.net.URI(String spec)
             try {

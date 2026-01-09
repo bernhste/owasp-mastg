@@ -28,8 +28,3 @@
 [!] java.net.URI was used to create an insecure URI with the scheme 'ws'
 [!] java.net.URL was used to create an insecure URI with the scheme 'ftp'
 [!] java.net.URL was used to create an insecure URI with the scheme 'http'
-[!] java.net.URL was used to create an insecure URI with the scheme 'ldap'
-[!] java.net.URL was used to create an insecure URI with the scheme 'rtsp'
-[!] java.net.URL was used to create an insecure URI with the scheme 'sip'
-[!] java.net.URL was used to create an insecure URI with the scheme 'stun'
-[!] java.net.URL was used to create an insecure URI with the scheme 'ws'
