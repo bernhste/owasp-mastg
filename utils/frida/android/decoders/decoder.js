@@ -13,6 +13,7 @@ const { decodeJavaSecurityPublicKey } = require('./java.security.PublicKey');
 const { decodeObjectArray } = require('./object-array');
 const { decodeJavaUtilEnumeration } = require('./java.util.Enumeration');
 const { decodeAndroidDatabaseCursor } = require('./android.database.Cursor');
+const { decodeAndroidContentContentValues } = require('./android.content.ContentValues');
 
 /**
  * Decodes a Java object according to its type.
@@ -89,6 +90,10 @@ function decodeValue(type, value) {
 
         case "android.database.Cursor":
           readableValue = decodeAndroidDatabaseCursor(value);
+          break;
+
+        case "android.content.ContentValues":
+          readableValue = decodeAndroidContentContentValues(value);
           break;
 
         default:
@@ -181,4 +186,4 @@ function decodeArguments(types, args) {
   return parameters;
 }
 
-module.exports = { decodeArguments };
+module.exports = { decodeArguments, decodeValue };

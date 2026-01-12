@@ -1,5 +1,5 @@
 const { decodeArguments } = require('./decoders/decoder.js');
-const { target } = require('./hooks.js');
+const { target } = require('./demohook.js');
 
 /**
  * Decodes the parameter types of a Java method.
