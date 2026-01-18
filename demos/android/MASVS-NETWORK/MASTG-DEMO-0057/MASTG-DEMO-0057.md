@@ -3,12 +3,12 @@ platform: android
 title: Network Security Configuration Allows User-Added Certificates
 id: MASTG-DEMO-0057
 code: [xml, kotlin]
-test: MSTG-TEST-0286
+test: MASTG-TEST-0286
 ---
 
 ### Sample
 
-This sample Kotlin code fetches <https://mitm-software.badssl.com/> using `HttpsURLConnection`, which is not normally allowed because the certificate is not trusted by the system. However, due to the Network Security Configuration that permits user-added CA certificates, the connection is allowed to proceed.
+This sample Kotlin code fetches the @MASTG-TOOL-0143 server <https://mitm-software.badssl.com/> using `HttpsURLConnection`, which is not normally allowed because the certificate is not trusted by the system. However, due to the Network Security Configuration that permits user-added CA certificates, the connection is allowed to proceed.
 
 {{ MastgTest.kt # AndroidManifest.xml # AndroidManifest_reversed.xml # network_security_config.xml }}
 
