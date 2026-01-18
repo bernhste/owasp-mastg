@@ -9,7 +9,6 @@ randomNumber=$RANDOM
 workDir=/tmp/frida_$randomNumber
 mkdir $workDir
 
-
 # copy relevant files temporary work folder
 cp $hookPath $workDir
 cp -rf ../../../../utils/frida/android/* $workDir
