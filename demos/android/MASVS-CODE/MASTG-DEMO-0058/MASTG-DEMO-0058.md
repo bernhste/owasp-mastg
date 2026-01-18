@@ -1,6 +1,6 @@
 ---
 platform: android
-title: Dynamically Detecing Hijackable Implicit Intents
+title: Dynamic Detection of Implicit Intent Hijacking
 id: MASTG-DEMO-0058
 code: [kotlin]
 test: MASTG-TEST-0286

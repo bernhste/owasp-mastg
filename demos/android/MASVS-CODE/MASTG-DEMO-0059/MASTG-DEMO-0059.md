@@ -1,6 +1,6 @@
 ---
 platform: android
-title: Detecing Hijackable Implicit Intent Used For Internal Communication Using Semgrep
+title: Static Detection of External Intent Misuse for Internal IPC
 id: MASTG-DEMO-0059
 code: [kotlin]
 test: MASTG-TEST-0287
