@@ -15,7 +15,7 @@ This demo consits of two appluications. One which is vulnerable and one which hi
 
 The code snippet below demonstrates the use of an implicit intent which is comnsumed by the application itself again. This is an improper use of implicit intent as they are generally not used for interal IPC.
 
-{ MastgTest.kt # AndroidManifest.xml }
+{{ MastgTest.kt # AndroidManifest.xml }}
 
 The component `VulnerableActivity` within the vulnerable app originally intended to process sensitive data, but is exposed via an implicit intent mechanism. Intents targeted twoards this component can be hijacked by any app that claims to handle the same action.
 
@@ -26,7 +26,7 @@ The component `VulnerableActivity` within the vulnerable app originally intended
 
 The attacker app has an exported activity that includes a corresponding `<intent-filter>` which registers the custom action from the sample app, enabling it to capture the implicit intent sent out by the vulnerable app.
 
-{ interceptor/IntentInterceptorActivity.kt # interceptor/AndroidManifest.xml  }
+{{ interceptor/IntentInterceptorActivity.kt # interceptor/AndroidManifest.xml  }}
 
 
 ### Steps
