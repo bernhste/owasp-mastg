@@ -7,7 +7,7 @@ import android.content.Intent
 class MastgTest (private val context: Context){
 
     fun mastgTest(): String {
-        val sensitiveString = "Hello from the OWASP MASTG Test app."
+        val r = DemoResults("0058")
 
         // Vulnerable: Using implicit intent with sensitive data
         val vulnerableIntent = Intent().apply {
@@ -15,18 +15,33 @@ class MastgTest (private val context: Context){
             putExtra("sensitive_token", "auth_token_12345")
             putExtra("user_credentials", "admin:password123")
             putExtra("api_key", "sk-1234567890abcdef")
-            putExtra("message", sensitiveString)
         }
 
         // Launch implicit intent - any app can intercept this
         try {
             context.startActivity(vulnerableIntent)
-            Log.d("MASTG-TEST", "Launched vulnerable implicit intent with sensitive data")
+            r.add(Status.FAIL, "Hijackable implicit intent launched")
         } catch (e: Exception) {
-            Log.e("MASTG-TEST", "Failed to launch intent: ${e.message}")
+            r.add(Status.ERROR, e.toString())
         }
 
-        Log.d("MASTG-TEST", sensitiveString)
-        return sensitiveString
+        // Secure: Using implicit intent with sensitive data only accessible by the the known target application
+        val secureIntent = Intent().apply {
+            action = "org.owasp.mastestapp.PROCESS_SENSITIVE_DATA"
+            setPackage("org.owasp.mastestapp")
+            putExtra("sensitive_token", "auth_token_12345")
+            putExtra("user_credentials", "admin:password123")
+            putExtra("api_key", "sk-1234567890abcdef")
+        }
+
+        // Launch implicit intent - any app can intercept this
+        try {
+            context.startActivity(secureIntent)
+            r.add(Status.PASS, "Implicit intent only for the current app launched")
+        } catch (e: Exception) {
+            r.add(Status.ERROR, e.toString())
+        }
+
+        return r.toJson()
     }
 }

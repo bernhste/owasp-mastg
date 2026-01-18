@@ -1,6 +1,6 @@
 ---
 platform: android
-title: Implicit Intent Hijacking with same custom intent filter
+title: Hijackable Implicit Intent Used For Internal Communication
 id: MASTG-DEMO-0058
 code: [kotlin]
 test: MASTG-TEST-0286
@@ -25,6 +25,8 @@ A component within the vulnerable app originally intended to process sensitive d
 
 {{ MastgTestInternalData.kt }}
 
+
+
 ### Steps
 
 1. Install the attacker app on a device using @MASTG-TECH-0004.
@@ -33,9 +35,16 @@ A component within the vulnerable app originally intended to process sensitive d
 {{ MastgTestAttacker.kt }}
 {{ AndroidManifestAttacker_app.xml }}
 
+
+
+
 ### Observation
 
 The attacker app successfully intercepted the intent containing sensitive extras such as tokens, API keys, and credentials. This confirms that any app declaring a matching `<intent-filter>` can receive these values without restriction.
+
+
+
+
 
 ### Evaluation
 
