@@ -43,7 +43,6 @@ The attacker app has an exported activity that includes a corresponding `<intent
 1. Android will ask you which app sould be used to handle the intent. Choose "IntentInterceptor" as shown in the following figure: ![Choose Intent Handler](./images/intent_chooser.png)
 
 
-
 ### Observation
 
 The attacker app successfully intercepted the intent containing sensitive extras such as tokens, API keys, and credentials. This confirms that any app declaring a matching `<intent-filter>` can receive these values without restriction.
