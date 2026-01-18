@@ -1,6 +1,6 @@
 ---
 platform: android
-title: Implicit intent to trigger internal app components
+title: Detecing Hijackable Implicit Intent Used For Internal Communication Using Semgrep
 id: MASTG-DEMO-0059
 code: [kotlin]
 test: MASTG-TEST-0287
@@ -11,7 +11,7 @@ profiles: [L1, L2]
 
 The manifest snippet outlines an exported activity featuring an `<intent-filter>` with a unique action. This allows the component to be reachable by any application on the device that registers the identical intent action, which could allow a malicious app to capture such intents.
 
-{{ ../MASTG-DEMO-0058/AndroidManifest_reversed.xml }}
+{{ AndroidManifest.xml }}
 
 ### Steps
 
@@ -33,4 +33,6 @@ This configuration allows any third-party app to register the same action and re
 
 ### Evaluation
 
-The test fails because the exported activity can be accessed through a custom implicit action. This exposes internal functionality to untrusted apps.
+The test fails because the exported activity can be accessed through a custom implicit action. This exposes internal functionality to untrusted apps. 
+
+TODO: Describe that this is an indicator for possible implicit intent hijacking (see DEMO-0059)

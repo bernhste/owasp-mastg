@@ -1,6 +1,6 @@
 ---
 platform: android
-title: Hijackable Implicit Intent Used For Internal Communication
+title: Dynamically Detecing Hijackable Implicit Intents
 id: MASTG-DEMO-0058
 code: [kotlin]
 test: MASTG-TEST-0286
@@ -9,7 +9,7 @@ profiles: [L1, L2]
 
 ### Sample
 
-This demo consits of two appluications. One which is vulnerable and one which hijacks the implicit intent and steals sensitve data from the vulnerable app.
+This demo consits of two appluications. One which is vulnerable and one which hijacks @MASTG-KNOW-0025 and steals sensitve data from the vulnerable app.
 
 #### Vulnerable App
 
@@ -39,6 +39,7 @@ The attacker app has an exported activity that includes a corresponding `<intent
 ### Install the Vulnerable App
 
 1. Install the sample app on a device using @MASTG-TECH-0004.
+1. Run the scr
 1. On the vulnerable app, click on start to start the test.
 1. Android will ask you which app sould be used to handle the intent. Choose "IntentInterceptor" as shown in the following figure: ![Choose Intent Handler](./images/intent_chooser.png)
 
