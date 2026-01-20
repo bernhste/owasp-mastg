@@ -17,31 +17,17 @@ This is beneficial if a security tester is not able to intercept the network tra
 
 Hook methods which take URI schemes as arguments and verify, that they are not insecure meaning they refer to a protocol which does not support transport layer encryption for example.
 
-The following list enumerates @MASTG-KNOW-0109 which should be tested:
+The following list enumerates @MASTG-KNOW-0109 which can be used to establish network connections::
 
-- `java.net.URL(String spec)`
-- `java.net.URL(String protocol, String host, int port, String file)`
-- `java.net.URL(String protocol, String host, int port, String file, URLStreamHandler handler)`
-- `java.net.URL(String protocol, String host, String file)`
-- `java.net.URI(String spec)`
-- `java.net.URI(String scheme, String ssp, String fragment)`
-- `java.net.URI(String scheme, String host, String path, String fragment)`
-- `java.net.URI(String scheme, String authority, String path, String query, String fragment)`
-- `android.net.Uri.parse(String uriString)`
-- `android.net.Uri.Builder.scheme(String scheme)`
-- `android.webkit.WebView.loadUrl(String url)`
-- `android.webkit.WebView.loadDataWithBaseURL(String baseUrl, String data, String mimeType, String encoding, String historyUrl)`
-- `android.webkit.WebView.postUrl(String url, byte[] postData)`
-- `android.webkit.WebViewClient.doUpdateVisitedHistory(WebView view, String url, boolean isReload)`
-- `android.webkit.WebViewClient.onLoadResource(WebView view, String url)`
-- `android.webkit.WebViewClient.onPageCommitVisible(WebView view, String url)`
-- `android.webkit.WebViewClient.onPageFinished(WebView view, String url)`
-- `android.webkit.WebViewClient.onPageStarted(WebView view, String url, Bitmap favicon)`
-- `android.webkit.WebViewClient.shouldInterceptRequest(WebView view, String url)`
-- `android.webkit.WebViewClient.shouldOverrideUrlLoading(WebView view, String url)`
-- `android.media.MediaPlayer.setDataSource(String path)`
+- `java.net.URL`
+- `java.net.URI`
+- `android.net.Uri`
+- `android.net.Uri.Builder`
+- `android.webkit.WebView`
+- `android.webkit.WebViewClient`
+- `android.media.MediaPlayer`
 
-Aside from these methods, custom code, or third-party libraries may also contain places where clear text transmission is initiated.
+Aside from these components, custom code, or third-party libraries may also contain places where clear text transmission is initiated.
 
 ## Observation
 

@@ -4,7 +4,11 @@ platform: android
 title: Android Network APIs
 ---
 
-Android provides different APIs to establish network connections. They can separated into Java/Kotlin app and native code.
+Android provides different networking APIs to establish connections in the Java/Kotlin space.
+
+In native code it is still possible do networking using the POSIX API, but many of the additional Android security measures are not available here (See also @MASTG-BEST-0028).
+
+The following chapters go into more details for each available network API.
 
 ## Package `java.net`
 
@@ -19,7 +23,7 @@ The `java.net` package can be roughly divided in two sections:
     - Sockets, which are basic bidirectional data communication mechanisms.
     - Interfaces, which describe network interfaces.
 
-### Using java.net High Level API
+### Using `java.net` High Level API
 
 The class `HttpURLConnection` can be used to establish HTTP but also HTTPS connections depending on the specified protocol. The following code demonstrates a GET request:
 
@@ -71,9 +75,11 @@ try {
 
 ## Package `android.net`
 
-This package implements network related classes which server various mobile devices or Android specific needs. Examples are:
+This package implements network related classes which address various mobile devices, or Android specific needs. 
 
-- **CaptivePortal** A class allowing apps handling the ConnectivityManager.ACTION_CAPTIVE_PORTAL_SIGN_IN activity to indicate to the system different outcomes of captive portal sign in.
+Examples are:
+
+- **CaptivePortal** A class allowing apps handling the `ConnectivityManager.ACTION_CAPTIVE_PORTAL_SIGN_IN` activity to indicate to the system different outcomes of captive portal sign in.
 - **ConnectivityManager** Class that answers queries about the state of network connectivity such as monitoring Wi-Fi, GPRS or UMTS connections.
 - **DnsResolver**: Dns resolver class for asynchronous dns querying.
 - **LocalSocket**: Creates a (non-server) socket in the UNIX-domain namespace. Can be used to connect to an existing local server socket. This is also possible across different apps.
@@ -90,9 +96,9 @@ A second example is `android.net.Uri`. Compared to `java.net.URI` and `java.net.
 
 ## Native Code Networking
 
-When developing native code using the Android NDK toolset, there are no libraries available by default which implement protocols above the transport layer. Developers can interact with POSIX sockets and the [NDK Networking API](https://developer.android.com/ndk/reference/group/networking).
+When developing native code using the Android NDK toolset, there are no libraries available by default which implement protocols above the transport layer. Instead, developers can use the POSIX API directly to initialize sockets. [NDK Networking API](https://developer.android.com/ndk/reference/group/networking) on the other hand provides additional functions for address lookups for example.
 
-If a developer wants to do networking with protocols such as HTTP or TLS in the native code, they have to provide their own library.
+This means there the security features available in the Java/Kotlin layer are not available here. If developers want to do networking with protocols such as HTTP or TLS in the native code, they have to provide their own library.
 
 !!! Warning
-    @MASTG-KNOW-0014 may not be respected by custom libraries. The means it is the developers responsibility to make sure, that no sensitive data is transmitted. It is therefore not recommended doing networking in native code in general.
+    @MASTG-KNOW-0014 may not be respected by custom libraries. The means it is the developers responsibility to make sure, that no sensitive data is transmitted. It is therefore not recommended doing networking in native code in general (@MASTG-BEST-0028).
